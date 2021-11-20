@@ -121,10 +121,10 @@ from scipy.spatial import distance
 
 def euclid_distance(a, b):
     """
-
     :param a: кортеж 1 представляемых точек
     :param b: кортеж 2 представляемых точек
     :return: результат вычисления евклидового расстояния
+
     """
     dst = distance.euclidean(a, b)
     return dst

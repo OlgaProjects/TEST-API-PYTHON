@@ -81,7 +81,7 @@ def equation_square_root(a, b, c):
     :param b: коэффициент b
     :param c: коэффициент c
     :return: корни квадратного уравнения ax2 + bx + c = 0
-    сначала вычисляем дискриминант discriminant
+    вычисляем дискриминант discriminant
     вычисляем корень дискриминанта root
     Если discriminant > 0, то квадратное уравнение имеет два корня; если discriminant = 0, то 1 корень.
     Если discriminant < 0, то корней нет.
@@ -197,7 +197,6 @@ import random as rn
 
 tiсket = [4, 78, 99, 872]
 t = 0
-a = rn.randint(0, 1000)
 end_list = set()
 
 while len(tiсket) != len(end_list):

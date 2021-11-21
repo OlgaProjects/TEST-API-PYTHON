@@ -172,10 +172,10 @@ r = [rn.randint(1, 1000) for i in range(10)]
 v = [rn.randint(1, 1000) for i in range(10)]
 
 random_values['a'] = x
-random_values['b'] = x
-random_values['c'] = x
-random_values['d'] = x
-random_values['e'] = x
+random_values['b'] = y
+random_values['c'] = z
+random_values['d'] = r
+random_values['e'] = v
 
 t = []
 

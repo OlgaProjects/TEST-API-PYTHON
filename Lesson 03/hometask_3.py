@@ -118,7 +118,7 @@ with open(r'words.txt', 'r', encoding='utf-8') as f:  # считали файл
     data = f.read()
     print(data)
 
-add_words = dict() # создаем пустой словарь, из текстового сюда добавлять слова и перевод
+add_words = dict() # создаем пустой словарь, из текстового файла будем сюда добавлять слова и перевод
 
 
 def train(english_word, translate_russian):

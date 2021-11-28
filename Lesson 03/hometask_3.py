@@ -297,7 +297,7 @@ n = 5
 n=5
 
 def print_triangle(num):
-    b = [i for i in range(1, n+1)]
+    b = [i for i in range(1, num+1)]
     x = 0
     for i in b:
         x -= 1

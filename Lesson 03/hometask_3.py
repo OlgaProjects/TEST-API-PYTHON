@@ -60,11 +60,11 @@ with open(r'numbers.txt', 'r') as f:
 words =['hello', 'python', 'good', 'car', 'bye', 'sleep', 'python', 'car', 'python']
 """
 from collections import Counter
+import  random as rn
 
 words = ['hello', 'python', 'good', 'car', 'bye', 'sleep', 'python', 'car', 'python']
-words_1000 = words * 112  # 1000/len(words) получили число, на которое нужно умножить список words
-del words_1000[0:8]  # удаляем лишние элементы, чтобы получилось ровно 1000
-print(len(words_1000))
+b = [rn.choice(words) for i in range(1000)]
+print(len(b))
 
 print(*words, sep='\n')
 cnt = Counter(words)

@@ -60,7 +60,7 @@ with open(r'numbers.txt', 'r') as f:
 words =['hello', 'python', 'good', 'car', 'bye', 'sleep', 'python', 'car', 'python']
 """
 from collections import Counter
-import  random as rn
+import random as rn
 
 words = ['hello', 'python', 'good', 'car', 'bye', 'sleep', 'python', 'car', 'python']
 b = [rn.choice(words) for i in range(1000)]
@@ -118,7 +118,7 @@ with open(r'words.txt', 'r', encoding='utf-8') as f:  # считали файл
     data = f.read()
     print(data)
 
-add_words = dict() # создаем пустой словарь, из текстового файла будем сюда добавлять слова и перевод
+add_words = dict()  # создаем пустой словарь, из текстового файла будем сюда добавлять слова и перевод
 
 
 def train(english_word, translate_russian):
@@ -132,7 +132,6 @@ def train(english_word, translate_russian):
     file = open(r'words.txt', 'a', encoding='utf-8')
     file.write(f'\n{english_word}: {translate_russian}')
     file.close()
-
 
 
 def add_words_in_dict():
@@ -161,8 +160,10 @@ def test(en_word):
     else:
         print('Такого слова нет в словаре')
 
+
 while True:
-    print('Добро пожаловать в программу "Словарь"\n Нажмите 1 - для добавления слов\n Нажмите 2 - для перевода слов\n Нажмите 3 - для выхода')
+    print(
+        'Добро пожаловать в программу "Словарь"\n Нажмите 1 - для добавления слов\n Нажмите 2 - для перевода слов\n Нажмите 3 - для выхода')
     push = int(input())
     if push == 1:
         en_word = input("Введите слово на английском: \n ")
@@ -213,7 +214,7 @@ c = dict(zip(list_strong_wolves, b))
 max_strong = max(b)
 strong_wolf = [k for k, v in c.items() if v == max_strong]
 
-print('Самый сильный волк: ', strong_wolf , 'c мощностью: ', max_strong)
+print('Самый сильный волк: ', strong_wolf, 'c мощностью: ', max_strong)
 
 """
  7.
@@ -294,14 +295,16 @@ n = 5
 2 1 
 1, 
 например для n=5"""
-n=5
+n = 5
+
 
 def print_triangle(num):
-    b = [i for i in range(1, num+1)]
+    b = [i for i in range(1, num + 1)]
     x = 0
     for i in b:
         x -= 1
         print(*b[x::-1])
+
 
 print_triangle(n)
 """
@@ -313,14 +316,17 @@ print_triangle(n)
 """
 import math
 
+
 class ValueError(Exception):
     pass
+
 
 def my_sqrt(a):
     if a < 0:
         raise ValueError("impossible to got negative number")
     res = math.sqrt(a)
     return res
+
 
 print(my_sqrt(25))
 print(my_sqrt(-11))
@@ -333,18 +339,16 @@ print(my_sqrt(-11))
 """
 import math
 
+
 class DistanceError(Exception):
     pass
+
 
 def circumference(radius):
     if radius < 0:
         raise DistanceError('radius can`t less than 0')
     return 2 * math.pi * radius
 
+
 print(circumference(20))
 print(circumference(-1))
-
-
-
-
-

@@ -248,33 +248,30 @@ class Phone:
 
 class Nokia(Phone):
     def __init__(self, color, price, count_buttons):
-        self.color = color
-        self.price = price
+        super().__init__(color, price, "nokia")
         self.count_buttons = count_buttons
 
 
 class Iphone(Phone):
     def __init__(self, color, price, speed_internet):
-        self.color = color
-        self.price = price
+        super().__init__(color, price, "iphone")
         self.speed_internet = speed_internet
 
 
 class Samsung(Phone):
     def __init__(self, color, price, waterproofness):
-        self.color = color
-        self.price = price
+        super().__init__(color, price, "samsung")
         self.waterproofness = waterproofness
 
 
 colors = ["red", "black", "white", "golden", "silver"]
 speed_internet = ["2G", "3G", "4G", "5G"]
 waterproofness = [True, False]
+
 list_Iphone = [Iphone(choice(colors), randint(15000, 110000), choice(speed_internet)) for i in range(120)]
 list_Sam = [Samsung(choice(colors), randint(8000, 90000), choice(waterproofness)) for i in range(105)]
 list_Nokia = [Nokia(choice(colors), randint(3000, 25000), randint(24, 56)) for i in range(75)]
 
-# проверка отработки методов класса
 Iph = [i.speed_internet for i in list_Iphone]
 Sam = [i.waterproofness for i in list_Sam]
 Nok = [i.count_buttons for i in list_Nokia]

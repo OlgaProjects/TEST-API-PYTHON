@@ -9,28 +9,25 @@ circumference = 2 * math.pi * radius
 volume = 4/3 * math.pi * radius ** 3
 """
 import math
+r = 20
+p = math.pi
 
+def wrapper(r, p):
+    def area(radius):
+        a = math.pi * r ** 2
+        return a
 
-def wrapper(n):
-    return lambda x, y, z: print(x + ' ' + y + ' ' + z), area(n), circumference(n), volume(n)
+    def circumference(r):
+        c = 2 * math.pi * r
+        return c
 
+    def volume(radius):
+        v = 4 / 3 * math.pi * r ** 3
+        return v
 
-def area(radius):
-    a = math.pi * radius ** 2
-    return a
+    return lambda x, y, z: print(x + ' ' + y + ' ' + z), area(r), circumference(r), volume(r)
 
-
-def circumference(radius):
-    c = 2 * math.pi * radius
-    return c
-
-
-def volume(radius):
-    v = 4 / 3 * math.pi * radius ** 3
-    return v
-
-
-print(wrapper(20))
+print(wrapper(r, p))
 
 """2. создать список из 100 элементов, 
 случайные числа от -50 до 50, 

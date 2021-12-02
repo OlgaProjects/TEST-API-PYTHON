@@ -9,8 +9,10 @@ circumference = 2 * math.pi * radius
 volume = 4/3 * math.pi * radius ** 3
 """
 import math
+
 r = 20
 p = math.pi
+
 
 def wrapper(r, p):
     def area(radius):
@@ -21,11 +23,12 @@ def wrapper(r, p):
         c = 2 * math.pi * r
         return c
 
-    def volume(radius):
+    def volume(r):
         v = 4 / 3 * math.pi * r ** 3
         return v
 
     return lambda x, y, z: print(x + ' ' + y + ' ' + z), area(r), circumference(r), volume(r)
+
 
 print(wrapper(r, p))
 

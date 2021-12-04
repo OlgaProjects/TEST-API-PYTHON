@@ -48,9 +48,11 @@ def post_pet(id, name, photoUrls, status):
 
     response = requests.request("POST", url, headers=header, json=req_dict)
     resp_dict = response.json()
+    print(resp_dict)
     # делаем проверки
     assert response.status_code == 200, 'Код ответа не соответствует ожидаемому'
     assert resp_dict['name'] == name, f'Поле name не соответствует ожидаемому {name}, ожидаемое - {resp_dict["Smart"]}'
+    assert resp_dict['status'] == status, f'Поле name не соответствует ожидаемому {status}, ожидаемое - {resp_dict["status"]}'
 
     return response
 
@@ -71,3 +73,4 @@ def test_positive():
     delete_pet(id)
 
 test_positive()
+

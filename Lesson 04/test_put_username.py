@@ -51,17 +51,18 @@ def get_user(username):
     return resp_dict
 
 
-def put_user(username):
+def put_user(username, dic):
     api_method = f'v2/user/{username}'
     url = f'https://petstore.swagger.io/{api_method}'
     headers = {'accept': 'application/json'}
     headers["content-type"] = "application/json"
 
-    resp = post_user(id, username, firstname, lastName, email, password, phone, userStatus=0)
-    resp_dict = resp.json()
-    resp_dict['phone'] = phone_1
+    dic['phone'] = phone_1
+    # resp = post_user(id, username, firstname, lastName, email, password, phone, userStatus=0)
+    # resp_dict = dic.json()
 
-    response = requests.request("PUT", url, headers=headers, json=resp_dict)
+
+    response = requests.request("PUT", url, headers=headers, json=dic)
     return response
 
 
@@ -76,14 +77,18 @@ firstname = random.choice(firstname_list)
 lastName = random.choice(lastName_list)
 email = random.choice(email_list)
 password = random.randint(0, 600)
-phone = random.randint(658798, 6547875555)
-phone_1 = random.randint(785214, 6547875555)
+phone = random.randint(1, 300)
+phone_1 = 789451789
 
-print(post_user(id, username, firstname, lastName, email, password, phone, userStatus=0))
+u = post_user(id, username, firstname, lastName, email, password, phone, userStatus=0)
+print(u)
 r = get_user(username)
+print(type(r))
 print(r)
-p = put_user(username)
+
+p = put_user(username, r)
 print(p)
 g = get_user(username)
 print(g)
+assert g['phone'] == phone_1, f'Поле phone не соответствует ожидаемому {phone_1}, ожидаемое - {g["phone"]}'
 

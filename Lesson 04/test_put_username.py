@@ -61,17 +61,6 @@ def put_user(username):
     resp_dict = resp.json()
     resp_dict['phone'] = phone_1
 
-    # request_dict = {
-    #     "id": 0,
-    #     "username": username,
-    #     "firstName": firstname,
-    #     "lastName": lastName,
-    #     "email": email,
-    #     "password": password,
-    #     "phone": phone_1,
-    #     "userStatus": 0
-    # }
-
     response = requests.request("PUT", url, headers=headers, json=resp_dict)
     return response
 

@@ -72,5 +72,5 @@ def test_positive():
     post_pet(id, name, photoUrls, status)
     delete_pet(id)
 
-test_positive()
 
+test_positive()
